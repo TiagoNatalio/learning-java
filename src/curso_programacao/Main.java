@@ -7,15 +7,23 @@ public class Main{
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int N = sc.nextInt();
+		double fahre;
+		double celsius;
+		char repetir;
 		
-		int soma = 0;
-		
-		for (int i=0; i<N; i++) {
-			int x = sc.nextInt();
-			soma += x;
-		}
-		System.out.println(soma);
+		do{
+			
+			System.out.print("Digite a temperatura em Celsius:");
+			celsius = sc.nextInt();
+			
+			fahre = (9.0 * celsius) / 5.0 + 32.0;
+			
+			System.out.printf("Equivalente a Fahrenheit: %.1f%n",fahre);
+			System.out.print("Dejesa repetir (s/n)?");
+			
+			repetir = sc.next().charAt(0);
+			
+		}while(repetir != 'n');
 		
 		sc.close();
 	}
