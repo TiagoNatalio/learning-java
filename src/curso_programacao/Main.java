@@ -7,24 +7,33 @@ public class Main{
 		
 		Scanner sc = new Scanner(System.in);
 		
-		double fahre;
-		double celsius;
-		char repetir;
+		System.out.println("Enter three numbers: ");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
 		
-		do{
-			
-			System.out.print("Digite a temperatura em Celsius:");
-			celsius = sc.nextInt();
-			
-			fahre = (9.0 * celsius) / 5.0 + 32.0;
-			
-			System.out.printf("Equivalente a Fahrenheit: %.1f%n",fahre);
-			System.out.print("Dejesa repetir (s/n)?");
-			
-			repetir = sc.next().charAt(0);
-			
-		}while(repetir != 'n');
+		int higher = max(a,b,c);
+		
+		showResult(higher);
 		
 		sc.close();
 	}
+	
+	public static int max(int x, int y, int z) {
+		int aux;
+		if (x > y && x > z) {
+			aux = x;
+		}else if (y > z){
+			aux = y;
+		}else {
+			aux = z;
+		}
+		
+		return aux;
+	}
+	
+	public static void showResult(int value) {
+		System.out.println("Higher = " + value);
+	}
+	
 }
